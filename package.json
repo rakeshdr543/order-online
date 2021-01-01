@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node backend/server"
   },
   "repository": {
     "type": "git",
@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/rakeshdr543/order-online/issues"
   },
-  "homepage": "https://github.com/rakeshdr543/order-online#readme"
+  "homepage": "https://github.com/rakeshdr543/order-online#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
 }
