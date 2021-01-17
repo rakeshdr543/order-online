@@ -68,9 +68,6 @@ const ProductScreen = () => {
                </Card>
             </Col>
             </Row>
-                    
-
-
         </>
     )
 }
