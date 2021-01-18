@@ -1,13 +1,13 @@
 import React, { useState } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
 import { Link, useParams } from 'react-router-dom'
 import { Row, Col, Image, ListGroup, Card, Button, Form } from 'react-bootstrap'
 import Rating from '../components/Rating'
-import products from '../productsAndImages/products'
 
 const ProductScreen = () => {
     const {id} =useParams()
-    const Item=products.filter((product)=>product._id === id)
-    const product=Item[0] 
+    const productDetails = useSelector((state) => state.productDetails)
+    const { loading, error, product } = productDetails
     
     return (
         <>
