@@ -1,13 +1,22 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { Link, useParams } from 'react-router-dom'
 import { Row, Col, Image, ListGroup, Card, Button, Form } from 'react-bootstrap'
 import Rating from '../components/Rating'
+import { listProductDetails } from '../actions/productActions'
 
-const ProductScreen = () => {
+const ProductScreen = ({history,match}) => {
     const {id} =useParams()
+    const dispatch=useDispatch()
     const productDetails = useSelector((state) => state.productDetails)
     const { loading, error, product } = productDetails
+    
+    useEffect(() => {
+    
+      if (!product._id || product._id !== match.params.id) {
+        dispatch(listProductDetails(match.params.id))
+      }
+    }, [dispatch, match])
     
     return (
         <>
